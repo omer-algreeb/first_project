@@ -60,6 +60,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     ast (2.4.0)
+    bcrypt (3.1.13)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -118,6 +119,7 @@ GEM
     pg (1.1.4)
     puma (3.12.1)
     rack (2.0.7)
+    rack-cors (1.0.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.0)
@@ -185,6 +187,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   i18n-tasks (~> 0.9.5)
@@ -192,6 +195,7 @@ DEPENDENCIES
   paperclip
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
+  rack-cors (~> 1.0, >= 1.0.3)
   rails (~> 6.0.0)
   spring
   spring-watcher-listen (~> 2.0.0)
