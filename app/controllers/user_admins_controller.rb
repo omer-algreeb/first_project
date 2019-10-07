@@ -15,9 +15,11 @@ class UserAdminsController < ApplicationController
 
   # POST /user_admins
   def create
+    
     @user_admin = UserAdmin.new(user_admin_params)
 
     if @user_admin.save
+      Resque.enqueue(SnippetHighlighter, @user_admin.id)
       render json: @user_admin, status: :created, location: @user_admin
     else
       render json: @user_admin.errors, status: :unprocessable_entity
@@ -46,6 +48,6 @@ class UserAdminsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_admin_params
-      params.require(:user_admin).permit(:name, :email, :phone, :password, :job_id)
+      params.permit(:name, :email, :phone, :password, :job_id)
     end
 end

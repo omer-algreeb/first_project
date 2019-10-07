@@ -20,14 +20,14 @@ class UserAdmin < ApplicationRecord
   has_many :messages, through: :user_messages
   
 
-  validates :name, presence: true, format: { with: /\A[a-zA-Z]+\z/,
-    message: "only allows letters" }
-  validates :email, presence: true, uniqueness: true
-  validates :phone, presence: true, numericality: true
-  validates :email, confirmation: true
-  validates :email_confirmation, presence: true
-  validates :password, length: { in: 6..20 }
-
+  #validates :name, presence: true, format: { with: /\A[a-zA-Z]+\z/,
+  #  message: "only allows letters" }
+  #validates :email, presence: true, uniqueness: true
+  #validates :phone, presence: true, numericality: true
+  #validates :email, confirmation: true
+  #validates :email_confirmation, presence: true
+  #validates :password, length: { in: 6..20 }
+#
 
 
   scope :sorted, lambda { order(id: :desc) }

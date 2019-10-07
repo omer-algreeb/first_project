@@ -32,9 +32,19 @@ gem 'annotate'
 
 gem 'rack-cors', '~> 1.0', '>= 1.0.3'
 
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'
+
+gem 'resque'
+
+gem 'fuubar'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'rspec-rails'
 end
 
 group :development do
