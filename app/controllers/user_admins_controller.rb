@@ -4,7 +4,7 @@ class UserAdminsController < ApplicationController
   # GET /user_admins
   def index
     @user_admins = UserAdmin.all
-
+    Resque.enqueue(SindEmailForAllUser)
     render json: @user_admins
   end
 
