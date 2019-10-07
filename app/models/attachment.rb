@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: attachments
+#
+#  id         :integer          not null, primary key
+#  message_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Attachment < ApplicationRecord
   belongs_to :message
   has_many_attached :attachment

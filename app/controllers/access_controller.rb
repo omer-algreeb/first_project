@@ -13,7 +13,15 @@ class AccessController < ApplicationController
 
   def index
     @user = User.all
-    render json: @user
+    
+    respond_to do |format|
+      format.json {render json: @user} 
+      format.pdf do
+        pdf_html = ActionController::Base.new.render_to_string(template: 'access/index')
+        pdf = WickedPdf.new.pdf_from_string(pdf_html)
+        send_data pdf, filename: 'hg.pdf'
+      end
+    end
   end
 
   def login 

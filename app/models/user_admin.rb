@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: user_admins
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  email           :string
+#  phone           :string
+#  password_digest :string
+#  job_id          :integer          not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class UserAdmin < ApplicationRecord
   has_secure_password
   belongs_to :job
@@ -6,14 +20,14 @@ class UserAdmin < ApplicationRecord
   has_many :messages, through: :user_messages
   
 
-  validates :name, presence: true, format: { with: /\A[a-zA-Z]+\z/,
-    message: "only allows letters" }
-  validates :email, presence: true, uniqueness: true
-  validates :phone, presence: true, numericality: true
-  validates :email, confirmation: true
-  validates :email_confirmation, presence: true
-  validates :password, length: { in: 6..20 }
-
+  #validates :name, presence: true, format: { with: /\A[a-zA-Z]+\z/,
+  #  message: "only allows letters" }
+  #validates :email, presence: true, uniqueness: true
+  #validates :phone, presence: true, numericality: true
+  #validates :email, confirmation: true
+  #validates :email_confirmation, presence: true
+  #validates :password, length: { in: 6..20 }
+#
 
 
   scope :sorted, lambda { order(id: :desc) }
