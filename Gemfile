@@ -30,7 +30,7 @@ gem 'paperclip'
 
 gem 'annotate'
 
-gem 'rack-cors', '~> 1.0', '>= 1.0.3'
+gem 'rack-cors', '~> 1.0'
 
 gem 'wicked_pdf'
 
